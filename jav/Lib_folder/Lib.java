@@ -22,6 +22,17 @@ public class Lib {
         System.out.println(text);
         
     }
+    public static void Write(int[] arr) {
+      StringBuilder s = new StringBuilder("");
+      for (int i : arr) {
+        s.append(i);
+        s.append("  ");
+      }
+      Write(s.toString());
+    }
+    private static void Write(int a) {
+      Write(""+a);
+    }
     /////////////////////////////////////////////////////////////////////////////
     public static String Take() {
 
