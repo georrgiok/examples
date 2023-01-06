@@ -16,11 +16,14 @@ public class Lib {
         
     }
     public static void Write(String text ) {    
-        
-        
-        
-        System.out.println(text);
-        
+        System.out.println(text);  
+    }
+    public static void Write(String text, boolean inNewRow) {
+      if (inNewRow) {
+        Write(text);
+      } else {
+        System.out.print(text);
+      }
     }
     public static void Write(int[] arr) {
       StringBuilder s = new StringBuilder("");
@@ -37,9 +40,9 @@ public class Lib {
     public static String Take() {
 
         Scanner str = new Scanner(System.in);
-        String sds = str.nextLine();
-        return sds;
+        return str.nextLine();
     }
+    
 // определяет простое число (только делится на себя и 1 без остатка)
     public static boolean IsSimpleNumber(int number) { 
         int i = 2;
