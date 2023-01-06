@@ -30,7 +30,7 @@ public class Lib {
       }
       Write(s.toString());
     }
-    private static void Write(int a) {
+    public static void Write(int a) {
       Write(""+a);
     }
     /////////////////////////////////////////////////////////////////////////////
