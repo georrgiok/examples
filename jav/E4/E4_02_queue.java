@@ -1,5 +1,6 @@
 package jav.E4;
 import java.util.LinkedList;
+import jav.Lib_folder.Lib;
 
 public class E4_02_queue {
     LinkedList<Integer> orig;
@@ -22,6 +23,10 @@ public class E4_02_queue {
     //first() - возвращает первый элемент из очереди, не удаляя.
     public Integer first() {
         return this.orig.getFirst();
+    }
+    public E4_02_queue see() {
+        Lib.Write(""+this.orig);
+        return this;
     }
 
 }

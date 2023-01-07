@@ -11,9 +11,12 @@ public class E4_02 {
         E4_02_queue a = new E4_02_queue();
 
         a.enqueue(1).enqueue(2).enqueue(4);
+        E4_02_queue b = new E4_02_queue();
+        b.enqueue(5).enqueue(7).enqueue(12);
 
         Lib.Write(a.dequeue());
         Lib.Write(a.first());
+        a.see();
 
 
     }

@@ -20,11 +20,11 @@ public class E4_03 {
 
             String input = Lib.Take();
 
-            if (input.charAt(0) == ' ') {
-                input = input.substring(1);
+            if (input.charAt(0) == ' ') { // взять (этот)
+                input = input.substring(1); //удалить (до)
             }
             //Lib.Write(input);
-            Integer firstSpace = input.indexOf(" ");
+            Integer firstSpace = input.indexOf(" "); //возращает идекс первого вхождения/поиск подстроки в строке (первый "ап")/если той строки нет возращает -1
             String a;
             if (firstSpace == -1) {
                 a = input;
@@ -43,7 +43,7 @@ public class E4_03 {
                     Lib.Write("Приходите снова!");
                     return;
                 case "z":
-                    if (!again) history.removeLast();
+                    if (!again) history.removeLast();//удалить посл эл
                     HashMap<String, String> old = history.removeLast();
                     Lib.Write(old.get("expression"), false);
                     itog = Integer.parseInt(old.get("itog"));
@@ -61,10 +61,10 @@ public class E4_03 {
                     break;
             
                 default:
-                    input = input.substring(a.length()+1);
-                    String b = input.substring(0, input.indexOf(" "));
-                    a1 = Integer.parseInt(a);
-                    c1 = Integer.parseInt(input.substring(b.length()+1));
+                    input = input.substring(a.length()+1);  //+ 2
+                    String b = input.substring(0, input.indexOf(" "));//+
+                    a1 = Integer.parseInt(a);//конв/5
+                    c1 = Integer.parseInt(input.substring(b.length()+1));//2
                     znak = b;
                     again = false;
                     break;
@@ -80,13 +80,13 @@ public class E4_03 {
                     itog = a1+c1;
                     break;
                 case "-":
-                itog = a1-c1;
+                    itog = a1-c1;
                     break;
                 case "*":
-                itog = a1*c1;
+                    itog = a1*c1;
                     break;
                 case "/":
-                itog = a1/c1;
+                    itog = a1/c1;
                     break;
             
                 default:
