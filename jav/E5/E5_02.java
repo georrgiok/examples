@@ -17,8 +17,8 @@ public class E5_02 {
 
         for (String iter : a ) {
             String name = iter.substring(0, iter.indexOf(" "));
-            if (list.containsKey(name)){
-                list.put(name,list.get(name)+1);
+            if (list.containsKey(name)){//есть ли этот ключ
+                list.put(name,list.get(name)+1);//вставить
             }
             else{
                 list.put(name,1);
@@ -29,7 +29,7 @@ public class E5_02 {
             Integer max =0;
             String name = "";
 
-            for (Map.Entry<String, Integer> entry : list.entrySet()) {
+            for (Map.Entry<String, Integer> entry : list.entrySet()) {//перебор мапы ключ/знач
 
             
                 if (max<entry.getValue()) {

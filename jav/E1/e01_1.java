@@ -1,8 +1,10 @@
 
+
+import jav.Lib_folder.*;
 //Вычислить n-ое треугольного число(сумма чисел от 1 до n), n! (произведение чисел от 1 до n)
 import java.util.Scanner;
 
-public class e01_1 {
+public class E01_1 {
     public static void main(String[] args) {
         
         Write("vvedy n");

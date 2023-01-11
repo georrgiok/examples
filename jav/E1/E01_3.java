@@ -1,6 +1,7 @@
+import jav.Lib_folder.*;
 //Реализовать простой калькулятор
 import java.util.Scanner;
-public class e03_1 {
+public class E01_3 {
    
     public static void main(String[] args) {
         Write("calc (+ - * /)");

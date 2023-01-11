@@ -10,6 +10,7 @@ import com.google.gson.reflect.TypeToken;
 import java.util.Map;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
+import java.util.Random;
 ////////////////////////////////////////////////////////////////////////////////
 public class Lib {
     public static void main(String[] args) {
@@ -87,5 +88,8 @@ public static void PrintArr(int[] arr) {
 }
 }
 /////////////////////////////////////////////////////////////////////////
-
+public static Integer getRandomInt(Integer min, Integer max){
+  Integer x = (int)(Math.random()*((max-min)+1))+min;
+  return x;
+}
 }

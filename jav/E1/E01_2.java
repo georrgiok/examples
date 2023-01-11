@@ -1,6 +1,8 @@
+
+import jav.Lib_folder.*;
 //Вывести все простые числа от 1 до 1000
 import java.util.Scanner;
-public class e02_1 {
+public class E01_2 {
     public static void main(String[] args) {
         Write("введите n");
         int n = Integer.parseInt(Take());
