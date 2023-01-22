@@ -11,6 +11,7 @@ import java.util.Map;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.util.Random;
+import java.io.FileWriter;
 ////////////////////////////////////////////////////////////////////////////////
 public class Lib {
     public static void main(String[] args) {
@@ -88,8 +89,55 @@ public static void PrintArr(int[] arr) {
 }
 }
 /////////////////////////////////////////////////////////////////////////
+/**
+ * Программа для получения случайного числа в диапазоне 
+ * @param min от включительно
+ * @param max до включительно
+ * @return 
+ * integer случайное целое число
+ */
 public static Integer getRandomInt(Integer min, Integer max){
   Integer x = (int)(Math.random()*((max-min)+1))+min;
   return x;
 }
+/////////////////////////////////////////////////////////////////////////
+/**
+ * запись строки в файл
+ *  @param String принимаем строку которую надо записать в файл
+ * файл будет создан если его его не существует
+ *  @param String принимакт название файла для записи
+ *  @param Boolean перезаписать файл(false) или дополнить(true)
+ *  */
+  public static void WriteToFile (String str, String fileName, Boolean append) {
+    try ( FileWriter fn = new FileWriter(fileName, append)){
+      fn.write(str);
+      fn.flush();
+      fn.close();
+    } 
+    catch (Exception e) {
+
+        Write(e.getMessage());
+    }
+  }
+  ////////
+  /**
+ * запись строки в файл с перезаписью содержимого
+ * файл будет создан если его его не существует
+ *  @param String принимаем строку которую надо записать в файл
+ *  @param String принимакт название файла для записи
+ *  */
+  public static void WriteToFile (String str, String fileName){
+    WriteToFile(str, fileName, false);
+  }
+  ////////
+  /**
+ * запись строки в  файл "file.txt" с перезаписью содержимого
+ * файл будет создан если его его не существует
+ *  @param String принимаем строку которую надо записать в файл
+
+ *  */
+  public static void WriteToFile (String str){
+    WriteToFile(str,"file.txt");
+  }
 }
+/////////////////////////////////////////////////////////////////////
