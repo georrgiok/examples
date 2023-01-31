@@ -1,25 +1,27 @@
- 
+package jav.E77;
 import java.util.ArrayList;
-
+import java.util.Iterator;
 import jav.Lib_folder.Lib;
 /**
  * Класс для хранения и отображения информации о человеке и его родственных связей
  */
-public class People {
 
-    protected static Print printTo;
-/*
+public class People{
+
+
+    protected static print printTo;
+
     enum print {
         console, file
     }
 
     
-   // protected static String fileName;
-  //  static{                                         //блок статического инициализатора
-  //      printTo = print.console;
-  //      fileName = "tree.txt";
+    protected static String fileName;
+    static{                                         //блок статического инициализатора
+        printTo = print.console;
+        fileName = "tree.txt";
 
-  //  }
+    }
 
  
 
@@ -32,11 +34,11 @@ public class People {
         printTo = print.file;
         People.fileName = fileName;
     }
-*/
-    public static void PrintStr(String p) {
-        People.printTo.Print(p);
 
-       /* switch (People.printTo) {
+    public static void PrintStr(String p) {
+        
+
+        switch (People.printTo) {
             case console:
                 Lib.Write(p);
                 break;
@@ -46,13 +48,10 @@ public class People {
         
             default:
                 break;
-        }  */
+        }  
     }
 
-    public static void SelectOutput(Print p) {
-        People.printTo = p;
-        
-    }
+   
 
 
 
@@ -76,6 +75,16 @@ public class People {
         this.child = new ArrayList<People>();
         this.gender = gender;
        
+    }
+
+    public Iterator iterator() {
+
+        ArrayList<String> a = new ArrayList<String>();
+        a.add(this.name);
+        a.add(this.gender);
+        a.add(""+this.year);
+
+        return a.iterator();
     }
 
 

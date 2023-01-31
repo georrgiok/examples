@@ -6,13 +6,9 @@ import jav.Lib_folder.Lib;
  *  дополнительные компоненты, например отвечающие за вывод данных в консоль, загрузку и сохранения в файл, получение\построение 
  * отдельных моделей человека Под “проведением исследования” можно понимать получение всех детей выбранного человека. */
 
-/**
- * + Передача метода вывода People из клиентского кода+
- * Перебор People через for in
- * Приведение People к строке
- */
+
  
-public class E7_01 {
+public class E9_01 {
     public static void main(String[] args) {
         
         People ded = new People("петр",1966,"male");
@@ -39,7 +35,7 @@ public class E7_01 {
         ded.addChild(pa);
         bab.addChild(ma);
 
-        People.SelectOutput(new PrintToFile("jav/E7/tree.txt"));
+        People.SelectOutput(new PrintToFile("jav/E9/tree.txt"));
         
 
        // People.ToFile("jav/E7/tree.txt");///
@@ -48,10 +44,9 @@ public class E7_01 {
         People.SelectOutput(new PrintToConsole());
         //People.ToConsole();///
         chil2.seeSisters();
+        father.see();
 
-        for (iterable_type iterable_element : father) {
-            
-        }
+
 
        
 

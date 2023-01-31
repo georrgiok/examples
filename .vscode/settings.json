@@ -2,5 +2,6 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\geek_br\\HomeWoekGeekBrains\\gson-2.10.jar"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
