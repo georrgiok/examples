@@ -139,5 +139,30 @@ public static Integer getRandomInt(Integer min, Integer max){
   public static void WriteToFile (String str){
     WriteToFile(str,"file.txt");
   }
+  /////////////////////////////////////////////////////////////////
+  public static Boolean IsCharNumber(char a) {
+   // if (a=='1'||a=='2'||a=='3'||a=='4'||a=='5') {  
+   // }
+    switch (a) {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
+      case '.':
+
+
+        return true;
+
+      default:
+        return false;
+        
+    }
+  }
 }
 /////////////////////////////////////////////////////////////////////

@@ -17,10 +17,10 @@ public final class Unmutable { //не наследоваемый
         }
         this.fieldMap = deepCopy;
     }
-    public String getField() {
-        return field;
+    public String GetField() {
+        return ""+field;
     }
-    public Map<String, String> getFieldMap() {
+    public Map<String, String> GetFieldMap() {
         Map<String, String> deepCopy = new HashMap<String, String>();
         for(String key : this.fieldMap.keySet()) {           //this.fieldMap-контекстная переменная
           deepCopy.put(key, this.fieldMap.get(key));
@@ -28,7 +28,7 @@ public final class Unmutable { //не наследоваемый
         return deepCopy;
     }
 
-    public void see() {
+    public void See() {
 
         for (String e : this.fieldMap.keySet()) {
             System.out.println(e);
