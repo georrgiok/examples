@@ -1,27 +1,42 @@
-﻿// See https://aka.ms/new-console-template for more information
-using calc.program.view;
+﻿using calc.program.view.dataReturnSee;
+using calc.program.view.dataSee;
+using calc.program.view.controllerSee;
+using calc.program.view.plainSee;
 using calc.program.model;
 using calc.program.controller;
 
 
+/////////////////////////models///////////////////////////////////////
+ActionList actionsGetter = new ActionList();
+//////////////////////////////////////////////////////////////////////
+////////////////////////controller////////////////////////////////////
+UserInputController userInput = new UserInputController(new UserInputsModel());
 
-HelloScreen.see();
-ActionList al = new ActionList();
-DScreen.see(new ActionListController(al));
-EnterScreen a = new EnterScreen(new ExecController(
-    al, 
-    new Save(),    
+////////////////////////screens///////////////////////////////////////
+EnterScreen taskEnter = new EnterScreen(new ExecController(
+    actionsGetter,
+    new Storage<Formula>(),
     new ErrorScreen(),
     new ResScreen()
 ));
-a.see();
-Boolean ab = true;
-while(ab)
+ContinueScreen continueScr = new ContinueScreen();
+ExitScreen exitScr = new ExitScreen();
+////////////////////////////////////////////////////////////////////
+new HelloScreen().see();
+
+new OperationsScreen().see(new ActionListController(actionsGetter));
+
+taskEnter.see();
+
+
+
+Boolean isContinue = true;
+while (isContinue)
 {
-    
-    ab = ContinueScreen.see( 
-        a,
-        new ExitScreen(),
-        new UserInputController(new UserInputsModel( ))
+
+    isContinue = continueScr.see(
+        taskEnter,
+        exitScr,
+        userInput
     );
 }

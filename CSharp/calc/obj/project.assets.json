@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\geek_br\\HomeWoekGeekBrains\\CSharp\\calc\\calc.csproj",
+      "projectUniqueName": "E:\\github\\examples\\CSharp\\calc\\calc.csproj",
       "projectName": "calc",
-      "projectPath": "C:\\geek_br\\HomeWoekGeekBrains\\CSharp\\calc\\calc.csproj",
+      "projectPath": "E:\\github\\examples\\CSharp\\calc\\calc.csproj",
       "packagesPath": "C:\\Users\\kryug\\.nuget\\packages\\",
-      "outputPath": "C:\\geek_br\\HomeWoekGeekBrains\\CSharp\\calc\\obj\\",
+      "outputPath": "E:\\github\\examples\\CSharp\\calc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kryug\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

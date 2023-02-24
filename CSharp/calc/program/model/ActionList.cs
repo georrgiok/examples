@@ -3,20 +3,18 @@
 namespace calc.program.model {
    
     public class ActionList {
-        public List<char> GetListOper(){//возможные знаки вывод
-            List<char> a = new List<char>();
-            a.Add('+');
-            a.Add('-');
-            a.Add('*');
-            a.Add('/');
-            return a;
+        public List<char> getList(){//возможные знаки вывод
+            return new List<char>() {
+                '+',
+                '-',
+                '*',
+                '/'
+            };
 
         }
-        public BaseAction GetAction(Char znak){
+        public BaseAction getAction(Char znak){
             
             switch (znak){
-                case '+':
-                    return new Sumn();
                 case '-':
                     return new Minus();
                 case '*':
@@ -24,7 +22,7 @@ namespace calc.program.model {
                 case '/':
                     return new Divide();    
                 default:
-                    return null;
+                    return new Sumn();
             }
             
             

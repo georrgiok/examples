@@ -3,21 +3,21 @@ using calc.program.model;
 
 namespace calc.program.controller{
     
-    public class UserInputController{
+    public class UserInputController : IDoubleController<String,Boolean>{
 
         private UserInputsModel userInput;
+        private String takedString;
 
 
         public  UserInputController(UserInputsModel userInput){
-
             this.userInput = userInput;
-
+            this.takedString = "";
         }
 
-        public Boolean convertToBool(String userInputString){
-            
-           
-            switch (this.userInput.takeData(userInputString)){
+        public Boolean convertToBool(){
+            if (this.takedString == null) return false;
+        
+            switch (this.userInput.takeData(this.takedString)){
                 
                 case 1:
                     return true;
@@ -28,6 +28,16 @@ namespace calc.program.controller{
                     return false;
 
             }
+        }
+
+        public bool getData()
+        {
+            return this.convertToBool();
+        }
+
+        public void takeData(string data)
+        {
+            this.takedString = data;
         }
     }
 

@@ -6,26 +6,32 @@ using calc.program.model;
 
 namespace calc.program.controller {
     
-    public class ActionListController {
+    public class ActionListController : IReturnController<string> {
 
-        private ActionList actions;
+        private ActionList actionsModel;
+        private String acrionsStr;
 
         public ActionListController(ActionList a) {
-            this.actions = a;
+            this.actionsModel = a;
+            this.acrionsStr = "";
         }
 
 
-
-
-
-
         public String getActions() {
-            List<char> a = this.actions.GetListOper();
+            List<char> a = this.actionsModel.getList();
             String c = "";
             foreach (char b in a){
                 c +=b+" ";
             }
+            this.acrionsStr = c;
             return c;
+        }
+
+        public string getData()
+        {
+            if (this.acrionsStr.Length == 0) this.getActions();
+            return this.acrionsStr;
+           
         }
     }
 }

@@ -1,18 +1,18 @@
 using calc.program.model;
-using calc.program.view;
+using calc.program.view.dataSee;
 namespace calc.program.controller{
 
     public class ExecController{
 
         private ActionList actionList;
-        private Save save;
-        private ErrorScreen errorScreen;
-        private ResScreen resScreen;
+        private Storage<Formula> storage;
+        private IDataSee errorScreen;
+        private IDataSee resScreen;
 
-        public ExecController(ActionList actionList,Save save,ErrorScreen errorScreen,ResScreen resScreen){
+        public ExecController(ActionList actionList,Storage<Formula> storage,IDataSee errorScreen,IDataSee resScreen){
 
             this.actionList = actionList;  
-              this.save = save;
+            this.storage = storage;
             this.errorScreen = errorScreen;
             this.resScreen = resScreen;
 
@@ -24,15 +24,14 @@ namespace calc.program.controller{
 
             Char znak = formula.getZnak();
 
-            BaseAction action = this.actionList.GetAction(znak);
+            BaseAction action = this.actionList.getAction(znak);
 
             action.setX(formula.getX());
             action.setY(formula.getY());
-
             formula.setResult(action.result());
 
-            this.save.add(formula);
 
+            this.storage.add(formula);
             this.resScreen.see(formula.toString());
 
 

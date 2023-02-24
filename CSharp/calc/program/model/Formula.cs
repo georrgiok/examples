@@ -1,34 +1,49 @@
 
 
-namespace calc.program.model{
+namespace calc.program.model
+{
 
-    public class Formula{
+    public class Formula : ICloneable
+    {
 
 
         private Double res;
-        private Boolean flag;
+        private Boolean isResSet;
         private Double num1;
         private Double num2;
         private Char znak;
 
-        public Formula(String str){
-           
-            this.flag = false;
+        public Formula(String str)
+        {
+            this.isResSet = false;
             this.FromString(str);
-
+        }
+        public Formula(Formula from)
+        {
+            this.num1 = from.getX();
+            this.num2 = from.getY();
+            this.znak = from.getZnak();
+            if (from.resultIsSet())
+            {
+                this.setResult(from.getResult());
+            }
         }
 
-        public void FromString(String str){
-            String num1="";
-            String num2="";
-            Char znac=' ';
+        public void FromString(String str)
+        {
+            String num1 = "";
+            String num2 = "";
+            Char znac = ' ';
             Boolean flag1 = true;
-            for (int i = 0; i < str.Length; i++){
-                if (str[i]!=' '){
-                    Char a= str[i];
-                    
-                    if (flag1){
-                        if (!Char.IsDigit(a)&&num1.Length==0)
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != ' ')
+                {
+                    Char a = str[i];
+
+                    if (flag1)
+                    {
+                        if (!Char.IsDigit(a) && num1.Length == 0)
                         {
                             num1 += a;
                             continue;
@@ -45,60 +60,65 @@ namespace calc.program.model{
                         }
 
                     }
-                    else{
+                    else
+                    {
                         num2 += a;
-                    }                       
+                    }
                 }
 
-                    
+
 
             }
-            
+
             this.num1 = Double.Parse(num1);
             this.num2 = Double.Parse(num2);
             this.znak = znac;
 
         }
 
-        public Double getX(){
+        public Double getX()
+        {
             return this.num1;
         }
-        public Double getY(){
+        public Double getY()
+        {
             return this.num2;
         }
-        public Char getZnak(){
+        public Char getZnak()
+        {
             return this.znak;
         }
-        public Double getResult(){
+        public Double getResult()
+        {
             return this.res;
         }
-        public void setResult(Double aa){
-            this.res = aa;
-            this.flag = true;
-
-            
+        public Boolean resultIsSet()
+        {
+            return this.isResSet;
         }
 
-        
-        public String toString(){
+        public void setResult(Double number)
+        {
+            this.res = number;
+            this.isResSet = true;
+        }
+        public Formula copy()
+        {
+            return (Formula)this.Clone();
+        }
+        public object Clone()
+        {
+            return new Formula(this);
+        }
 
+        public String toString()
+        {
 
-
-            if (this.flag)
-            {
-                return this.getX()+" "+this.getZnak()+" "+this.getY()+" = "+this.getResult();
-            }
-            else{
-                return this.getX()+" "+this.getZnak()+" "+this.getY();
-            }
- 
-
-
-            
+            return this.getX() + " " + this.getZnak() + " " + this.getY() + (this.isResSet ? (" = " + this.getResult()) : "");
 
         }
 
-        
+
     }
 
 
