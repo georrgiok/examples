@@ -8,6 +8,8 @@ public class Formula {
     String oper;
     Double result;
 
+
+
     public Formula(String f){
         this.FromString(f);
 

@@ -18,7 +18,7 @@ public class Controller {
         Formula formula = new Formula(userInput);
         String oper = formula.GetOper();
 
-        ActionInterface c = (new ActionsList()).getAction(oper);
+        ActionInterface c = ActionsList.getAction(oper);
 
         if (c!=null){
           
