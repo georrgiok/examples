@@ -21,6 +21,9 @@ namespace calc.program.model{
                     ICloneable i = (ICloneable)item;
                     form.Add((T)i.Clone());
                 }
+                else{
+                    form.Add(item);
+                }
                 
             }
             return form;
