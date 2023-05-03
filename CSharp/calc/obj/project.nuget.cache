@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TCQ+yCHRwV8WixtS+PGl/dCD2RzIAxyf7qKJRw9CNt5YiPDnAMHw7K9bdUvsB2jYJCyEZKEBoGC7FrHH5CDkGw==",
+  "dgSpecHash": "C/H0bYBn+gzOPgGBhQkX3ACY4eIvvysDT8y8m5mwwhz+M6iNYUHgAufwhdQgY7eJjb/RTeCs30OPN2Khl19H5g==",
   "success": true,
-  "projectFilePath": "E:\\github\\examples\\CSharp\\calc\\calc.csproj",
+  "projectFilePath": "C:\\geek_br\\HomeWoekGeekBrains\\CSharp\\calc\\calc.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

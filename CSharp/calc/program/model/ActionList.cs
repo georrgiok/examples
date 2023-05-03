@@ -8,6 +8,7 @@ namespace calc.program.model {
                 '+',
                 '-',
                 '*',
+                '%',
                 '/'
             };
 
@@ -20,7 +21,9 @@ namespace calc.program.model {
                 case '*':
                     return new Multiply();
                 case '/':
-                    return new Divide();    
+                    return new Divide();
+                case '%':
+                    return new Procent();        
                 default:
                     return new Sumn();
             }
