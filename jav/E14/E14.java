@@ -1,8 +1,8 @@
-package jav.E12;
+package jav.E14;
 
 import jav.Lib_folder.Lib;
 
-public class E12 {
+public class E14 {
 
     public static void sort(int[] array){
         for  (int i = array.length/2 - 1; i>=0; i--){
